@@ -2,6 +2,8 @@
 
 ![CI](https://github.com/parthkeskar05-byte/mlops-churn-prediction/actions/workflows/ci.yml/badge.svg)
 
+![CI](https://github.com/parthkeskar05-byte/mlops-churn-prediction/actions/workflows/ci.yml/badge.svg)
+
 Predicts whether a telecom customer will churn, tracks training runs in MLflow, and serves the model through a FastAPI endpoint.
 
 ## Problem
