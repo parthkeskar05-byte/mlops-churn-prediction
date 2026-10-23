@@ -2,3 +2,10 @@ venv/
 __pycache__/
 .DS_Store
 mlruns/
+mlflow.db
+mlruns/
+.venv/
+__pycache__/
+*.pyc
+.env
+.DS_Store

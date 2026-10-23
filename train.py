@@ -59,6 +59,10 @@ with mlflow.start_run():
     
     # Log metrics to MLflow
     mlflow.log_metric("accuracy", acc)
+    from sklearn.metrics import precision_score, recall_score, f1_score
+    mlflow.log_metric("precision", precision_score(y_test, predictions))
+    mlflow.log_metric("recall", recall_score(y_test, predictions))
+    mlflow.log_metric("f1", f1_score(y_test, predictions))
     print(f"✅ Model trained successfully! Accuracy: {acc:.4f}")
     
     # Save the model locally for our API to use later
@@ -67,5 +71,7 @@ with mlflow.start_run():
     
     # Save the feature columns so our API knows what shape to expect
     pd.Series(X.columns).to_json("expected_features.json", orient='records')
+    mlflow.log_artifact("churn_model.json")
+    mlflow.log_artifact("expected_features.json")
 
 print("🎉 Phase 2 Complete!")
